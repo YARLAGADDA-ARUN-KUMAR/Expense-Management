@@ -1,0 +1,80 @@
+{
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "description": "Reference to company"
+    },
+    "employee_id": {
+      "type": "string",
+      "description": "Reference to employee who submitted"
+    },
+    "description": {
+      "type": "string",
+      "description": "Expense description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Food",
+        "Travel",
+        "Accommodation",
+        "Office Supplies",
+        "Entertainment",
+        "Other"
+      ],
+      "description": "Expense category"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount in company default currency"
+    },
+    "original_amount": {
+      "type": "number",
+      "description": "Original amount if different currency"
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code"
+    },
+    "original_currency": {
+      "type": "string",
+      "description": "Original currency if converted"
+    },
+    "conversion_rate": {
+      "type": "number",
+      "description": "Exchange rate used"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expense date"
+    },
+    "paid_by": {
+      "type": "string",
+      "description": "Who paid for the expense"
+    },
+    "receipt_url": {
+      "type": "string",
+      "description": "Receipt image URL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Approval status"
+    }
+  },
+  "required": [
+    "description",
+    "category",
+    "amount",
+    "currency",
+    "date"
+  ]
+}

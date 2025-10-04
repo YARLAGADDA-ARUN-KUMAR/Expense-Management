@@ -1,0 +1,36 @@
+{
+  "name": "ApprovalRule",
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "description": "Reference to company"
+    },
+    "rule_type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "specific_approver",
+        "hybrid"
+      ],
+      "description": "Type of approval rule"
+    },
+    "threshold_percentage": {
+      "type": "number",
+      "description": "Percentage threshold for approval (e.g., 60 means 60% of managers must approve)"
+    },
+    "specific_approver_id": {
+      "type": "string",
+      "description": "Specific approver user ID (for specific_approver or hybrid rules)"
+    },
+    "is_sequential": {
+      "type": "boolean",
+      "default": true,
+      "description": "If true, approvals must be sequential (direct manager first)"
+    }
+  },
+  "required": [
+    "company_id",
+    "rule_type"
+  ]
+}

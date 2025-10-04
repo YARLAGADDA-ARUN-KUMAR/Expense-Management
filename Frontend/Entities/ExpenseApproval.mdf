@@ -1,0 +1,36 @@
+{
+  "name": "ExpenseApproval",
+  "type": "object",
+  "properties": {
+    "expense_id": {
+      "type": "string",
+      "description": "Reference to expense"
+    },
+    "approver_id": {
+      "type": "string",
+      "description": "Reference to approver user"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "rejected"
+      ],
+      "description": "Approval decision"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Approval comments"
+    },
+    "approval_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the approval was made"
+    }
+  },
+  "required": [
+    "expense_id",
+    "approver_id",
+    "status"
+  ]
+}
